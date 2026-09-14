@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kn1111.github.io/itadaki-burger/sitemap.xml

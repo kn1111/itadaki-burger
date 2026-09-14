@@ -1,0 +1,224 @@
+/* いただきバーガー 公式サイト — 1 枚の CSS を ja / en で共有する */
+
+@font-face {
+  font-family: "PixelMplus";
+  src: url("fonts/pixelmplus12-subset.woff2") format("woff2"),
+       url("fonts/pixelmplus12-subset.woff") format("woff");
+  font-display: swap;
+}
+
+:root {
+  --bg: #1d2333;
+  --bg2: #232a3d;
+  --panel: #2a3249;
+  --line: #3e4866;
+  --ink: #f4ecda;
+  --mute: #b8b2a4;
+  --gold: #ffd870;
+  --brass: #f0b45c;
+  --brown: #a8601c;
+  --dark: #3a2418;
+  --wood: #5a3c22;
+  --pixel: "PixelMplus", "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
+  --text: system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 16px;
+  line-height: 1.85;
+  -webkit-text-size-adjust: 100%;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+.px { image-rendering: pixelated; image-rendering: crisp-edges; }
+a { color: var(--gold); }
+
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; }
+
+.sr {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* ---------- ヘッダー ---------- */
+
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(29, 35, 51, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 2px solid var(--dark);
+}
+.site-header .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; min-height: 56px;
+}
+.brand {
+  display: flex; align-items: center; gap: 8px;
+  color: var(--ink); text-decoration: none;
+  font-family: var(--pixel); font-size: 24px;
+}
+.brand img { width: 28px; height: 28px; }
+.nav { display: flex; align-items: center; gap: 14px; font-family: var(--pixel); }
+.nav a { text-decoration: none; }
+.nav .lang { color: var(--mute); font-size: 12px; }
+.nav .lang:hover { color: var(--ink); }
+
+/* ---------- ボタン ---------- */
+
+.btn {
+  display: inline-block;
+  font-family: var(--pixel);
+  font-size: 24px; line-height: 1.2;
+  padding: 12px 26px 10px;
+  color: var(--dark);
+  background: var(--gold);
+  text-decoration: none;
+  border: 3px solid var(--dark);
+  box-shadow: inset 0 -5px 0 var(--brass), 0 5px 0 var(--dark);
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+.btn:hover { transform: translateY(2px); box-shadow: inset 0 -5px 0 var(--brass), 0 3px 0 var(--dark); }
+.btn:active { transform: translateY(5px); box-shadow: inset 0 -3px 0 var(--brass), 0 0 0 var(--dark); }
+.btn.small { font-size: 12px; padding: 7px 14px 6px; border-width: 2px; box-shadow: inset 0 -3px 0 var(--brass), 0 3px 0 var(--dark); }
+
+/* ---------- ヒーロー ---------- */
+
+.hero {
+  position: relative;
+  background: var(--bg2) url("assets/hero.png") center bottom / cover no-repeat;
+  image-rendering: pixelated;
+  border-bottom: 6px solid var(--dark);
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(29,35,51,0.35) 0%, rgba(29,35,51,0.15) 45%, rgba(29,35,51,0.8) 100%);
+  pointer-events: none;
+}
+.hero .wrap {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding-block: 48px 56px;
+}
+.hero h1 { margin: 0; }
+.hero .logo { width: min(560px, 86vw); filter: drop-shadow(0 6px 0 rgba(0,0,0,0.35)); }
+.tagline {
+  margin: 18px 0 4px;
+  font-family: var(--pixel); font-size: 36px; line-height: 1.4;
+  color: var(--ink);
+  text-shadow: 0 3px 0 var(--dark), 2px 0 0 var(--dark), -2px 0 0 var(--dark), 0 -2px 0 var(--dark);
+}
+.alt-name { margin: 0 0 24px; font-family: var(--pixel); font-size: 24px; line-height: 1.4; color: var(--gold); text-shadow: 0 2px 0 var(--dark); }
+.release {
+  margin: 22px 0 0; font-size: 15px; color: var(--ink);
+  background: rgba(29,35,51,0.8); padding: 4px 14px; border: 2px solid var(--dark);
+}
+
+/* ---------- セクション共通 ---------- */
+
+section { padding-block: 64px; }
+section.alt { background: var(--bg2); border-block: 4px solid var(--dark); }
+
+h2 {
+  margin: 0 0 28px;
+  font-family: var(--pixel); font-weight: normal;
+  font-size: 36px; line-height: 1.35;
+  color: var(--gold);
+  text-shadow: 0 3px 0 var(--brown), 0 6px 0 var(--dark);
+  text-align: center;
+}
+h3 { margin: 0 0 8px; font-family: var(--pixel); font-weight: normal; font-size: 24px; line-height: 1.4; color: var(--gold); }
+
+.lead { max-width: 760px; margin: 0 auto; font-size: 17px; }
+.lead p { margin: 0 0 1em; }
+.lead strong { color: var(--gold); }
+
+/* ---------- Steam ウィジェット ---------- */
+
+.steam-widget { max-width: 646px; margin: 36px auto 0; }
+.steam-widget iframe { display: block; width: 100%; height: 190px; border: 0; }
+@media (max-width: 680px) { .steam-widget { display: none; } }
+
+/* ---------- 遊びの流れ ---------- */
+
+.steps { display: grid; gap: 40px; }
+.step {
+  display: grid; grid-template-columns: 1.35fr 1fr; gap: 28px; align-items: center;
+}
+.step:nth-child(even) .shot { order: 2; }
+.shot { border: 4px solid var(--dark); box-shadow: 0 6px 0 rgba(0,0,0,0.35); background: var(--dark); }
+.step .num {
+  display: inline-block; margin-bottom: 6px;
+  font-family: var(--pixel); font-size: 12px; color: var(--dark);
+  background: var(--brass); padding: 0 10px; border: 2px solid var(--dark);
+}
+.step p { margin: 0; }
+@media (max-width: 760px) {
+  .step { grid-template-columns: 1fr; gap: 14px; }
+  .step:nth-child(even) .shot { order: 0; }
+}
+
+/* ---------- 積み上げるもの ---------- */
+
+.features {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;
+}
+.features li {
+  background: var(--panel); border: 3px solid var(--dark);
+  box-shadow: inset 0 3px 0 var(--line); padding: 18px 18px 16px;
+}
+.features b { display: block; font-family: var(--pixel); font-weight: normal; font-size: 24px; color: var(--gold); margin-bottom: 4px; }
+.features span { color: var(--mute); font-size: 15px; line-height: 1.7; }
+
+.challenge { max-width: 760px; margin: 40px auto 0; text-align: center; }
+.challenge p { margin: 0; }
+
+/* ---------- スクリーンショット ---------- */
+
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.gallery a { display: block; }
+.gallery figure { margin: 0; }
+.gallery figcaption { margin-top: 6px; font-size: 14px; color: var(--mute); }
+
+/* ---------- ゲーム情報 ---------- */
+
+.facts {
+  max-width: 760px; margin: 0 auto;
+  display: grid; grid-template-columns: max-content 1fr;
+  border: 3px solid var(--dark); background: var(--panel);
+}
+.facts dt, .facts dd { margin: 0; padding: 10px 16px; border-bottom: 2px solid var(--line); }
+.facts dt { font-family: var(--pixel); color: var(--gold); background: rgba(0,0,0,0.12); }
+.facts dt:last-of-type, .facts dd:last-of-type { border-bottom: 0; }
+@media (max-width: 520px) {
+  .facts { grid-template-columns: 1fr; }
+  .facts dt { border-bottom: 0; padding-bottom: 0; background: none; }
+}
+
+.cta-bottom { text-align: center; padding-block: 56px 72px; }
+.cta-bottom p { margin: 0 0 22px; font-family: var(--pixel); font-size: 24px; }
+
+@media (max-width: 560px) {
+  h2, .tagline { font-size: 24px; }
+  .btn, .brand { font-size: 18px; }
+  .alt-name { font-size: 16px; }
+}
+
+/* ---------- フッター ---------- */
+
+.site-footer {
+  background: #151a27; border-top: 4px solid var(--dark);
+  padding-block: 32px; font-size: 13px; color: var(--mute); line-height: 1.8;
+}
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; }
+.site-footer p { margin: 0; }
+.site-footer .maker { display: flex; align-items: center; gap: 8px; font-family: var(--pixel); font-size: 24px; color: var(--ink); }
+.site-footer .maker img { width: 24px; height: 24px; }
