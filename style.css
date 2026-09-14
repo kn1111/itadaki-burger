@@ -6,6 +6,9 @@
        url("fonts/pixelmplus12-subset.woff") format("woff");
   font-display: swap;
 }
+@font-face { font-family: "FusionPixelSC"; src: url("fonts/fusion-sc-subset.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "FusionPixelTC"; src: url("fonts/fusion-tc-subset.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "FusionPixelKO"; src: url("fonts/fusion-ko-subset.woff2") format("woff2"); font-display: swap; }
 
 :root {
   --bg: #1d2333;
@@ -22,6 +25,24 @@
   --pixel: "PixelMplus", "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
   --text: system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
 }
+
+/* 見出しのドットフォントは言語で替える (ゲームと同じ: 中韓は Fusion Pixel、ロシア語は普通の書体) */
+html[lang="zh-Hans"] {
+  --pixel: "FusionPixelSC", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+  --text: system-ui, -apple-system, "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+}
+html[lang="zh-Hant"] {
+  --pixel: "FusionPixelTC", "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", sans-serif;
+  --text: system-ui, -apple-system, "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", sans-serif;
+}
+html[lang="ko"] {
+  --pixel: "FusionPixelKO", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --text: system-ui, -apple-system, "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+html[lang="ko"] { word-break: keep-all; }
+html[lang="ru"] { --pixel: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+html[lang="ru"] h2, html[lang="ru"] h3, html[lang="ru"] .tagline, html[lang="ru"] .btn,
+html[lang="ru"] .features b, html[lang="ru"] .brand { font-weight: 700; }
 
 * { box-sizing: border-box; }
 
@@ -68,8 +89,24 @@ a { color: var(--gold); }
 .brand img { width: 28px; height: 28px; }
 .nav { display: flex; align-items: center; gap: 14px; font-family: var(--pixel); }
 .nav a { text-decoration: none; }
-.nav .lang { color: var(--mute); font-size: 12px; }
-.nav .lang:hover { color: var(--ink); }
+
+/* 言語メニュー (JS なし、details で開閉) */
+.langs { position: relative; font-family: var(--text); font-size: 14px; }
+.langs summary {
+  list-style: none; cursor: pointer; white-space: nowrap;
+  color: var(--mute); padding: 3px 10px; border: 2px solid var(--line);
+}
+.langs summary::-webkit-details-marker { display: none; }
+.langs summary::after { content: " ▾"; }
+.langs summary:hover, .langs[open] summary { color: var(--ink); border-color: var(--mute); }
+.langs ul {
+  position: absolute; right: 0; top: calc(100% + 8px); z-index: 20;
+  margin: 0; padding: 6px 0; list-style: none; min-width: 190px;
+  background: var(--panel); border: 3px solid var(--dark); box-shadow: 0 6px 0 rgba(0,0,0,0.35);
+}
+.langs li a { display: block; padding: 5px 16px; color: var(--ink); text-decoration: none; line-height: 1.5; }
+.langs li a:hover { background: var(--line); }
+.langs li a[aria-current] { color: var(--gold); }
 
 /* ---------- ボタン ---------- */
 
@@ -207,6 +244,7 @@ h3 { margin: 0 0 8px; font-family: var(--pixel); font-weight: normal; font-size:
 .cta-bottom p { margin: 0 0 22px; font-family: var(--pixel); font-size: 24px; }
 
 @media (max-width: 560px) {
+  .brand-name { display: none; }  /* 長い名前は折れる。すぐ下にロゴがあるのでアイコンだけにする */
   h2, .tagline { font-size: 24px; }
   .btn, .brand { font-size: 18px; }
   .alt-name { font-size: 16px; }

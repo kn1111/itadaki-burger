@@ -8,6 +8,14 @@
 <link rel="canonical" href="https://kn1111.github.io/itadaki-burger/">
 <link rel="alternate" hreflang="ja" href="https://kn1111.github.io/itadaki-burger/">
 <link rel="alternate" hreflang="en" href="https://kn1111.github.io/itadaki-burger/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kn1111.github.io/itadaki-burger/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://kn1111.github.io/itadaki-burger/zh-hant/">
+<link rel="alternate" hreflang="ko" href="https://kn1111.github.io/itadaki-burger/ko/">
+<link rel="alternate" hreflang="de" href="https://kn1111.github.io/itadaki-burger/de/">
+<link rel="alternate" hreflang="fr" href="https://kn1111.github.io/itadaki-burger/fr/">
+<link rel="alternate" hreflang="es" href="https://kn1111.github.io/itadaki-burger/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://kn1111.github.io/itadaki-burger/pt-br/">
+<link rel="alternate" hreflang="ru" href="https://kn1111.github.io/itadaki-burger/ru/">
 <link rel="alternate" hreflang="x-default" href="https://kn1111.github.io/itadaki-burger/en/">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
 <link rel="apple-touch-icon" href="assets/icon-256.png">
@@ -21,6 +29,14 @@
 <meta property="og:image" content="https://kn1111.github.io/itadaki-burger/assets/og-ja.png">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_LA">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
 
 <script type="application/ld+json">
@@ -28,18 +44,53 @@
   "@context": "https://schema.org",
   "@type": "VideoGame",
   "name": "いただきバーガー",
-  "alternateName": ["Itadaki Burger", "A Bun Above", "A Bun Above: Burger Stacking Roguelike", "顶饱汉堡"],
+  "alternateName": [
+    "Itadaki Burger",
+    "A Bun Above",
+    "顶饱汉堡",
+    "頂飽漢堡",
+    "탑버거",
+    "Burger obenauf",
+    "Un pain au-dessus",
+    "Burger a Tope",
+    "Pão nas Alturas",
+    "Булка Что Надо"
+  ],
   "url": "https://kn1111.github.io/itadaki-burger/",
   "image": "https://kn1111.github.io/itadaki-burger/assets/og-ja.png",
   "description": "具材を物理で落として積み上げるハンバーガー・ローグライク。となり合う具材のシナジーで稼ぎ、崩さず高く積んでお客さんのノルマに挑む。",
-  "genre": ["ローグライク", "デッキ構築", "物理パズル", "料理"],
+  "genre": [
+    "ローグライク",
+    "デッキ構築",
+    "物理パズル",
+    "料理"
+  ],
   "gamePlatform": "PC",
   "operatingSystem": "Windows 10 / 11 (64bit)",
   "applicationCategory": "Game",
-  "inLanguage": ["ja", "en", "zh-Hans", "zh-Hant", "ko", "de", "fr", "es", "pt-BR", "ru"],
-  "author": { "@type": "Organization", "name": "NoZworks" },
-  "publisher": { "@type": "Organization", "name": "NoZworks" },
-  "sameAs": ["https://store.steampowered.com/app/5161560/"]
+  "inLanguage": [
+    "ja",
+    "en",
+    "zh-Hans",
+    "zh-Hant",
+    "ko",
+    "de",
+    "fr",
+    "es",
+    "pt-BR",
+    "ru"
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "NoZworks"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "NoZworks"
+  },
+  "sameAs": [
+    "https://store.steampowered.com/app/5161560/"
+  ]
 }
 </script>
 <link rel="stylesheet" href="style.css">
@@ -48,9 +99,23 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="./"><img class="px" src="assets/icon-32.png" alt="" width="28" height="28">いただきバーガー</a>
+    <a class="brand" href="./"><img class="px" src="assets/icon-32.png" alt="" width="28" height="28"><span class="brand-name">いただきバーガー</span></a>
     <nav class="nav">
-      <a class="lang" href="en/" hreflang="en" lang="en">English</a>
+      <details class="langs">
+        <summary aria-label="言語">日本語</summary>
+        <ul>
+          <li><a href="./" hreflang="ja" lang="ja" aria-current="page">日本語</a></li>
+          <li><a href="en/" hreflang="en" lang="en">English</a></li>
+          <li><a href="zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
+          <li><a href="zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+          <li><a href="ko/" hreflang="ko" lang="ko">한국어</a></li>
+          <li><a href="de/" hreflang="de" lang="de">Deutsch</a></li>
+          <li><a href="fr/" hreflang="fr" lang="fr">Français</a></li>
+          <li><a href="es/" hreflang="es" lang="es">Español</a></li>
+          <li><a href="pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+          <li><a href="ru/" hreflang="ru" lang="ru">Русский</a></li>
+        </ul>
+      </details>
       <a class="btn small" href="https://store.steampowered.com/app/5161560/?l=japanese">Steam</a>
     </nav>
   </div>
@@ -74,12 +139,10 @@
       <h2>どんなゲーム？</h2>
       <div class="lead">
         <p><strong>いただきバーガー</strong>は、ハンバーガーを物理で積み上げるデッキ構築ローグライクです。</p>
-        <p>あなたはバーガー店の店主。お客さんのノルマを満たすバーガーを、その場で組み立てて出します。
-        ただし具材は<strong>物理で落ちる</strong>。狙って落とし、崩さず積み上げるのはあなたの腕次第。
-        となり合った具材が次々と効果を連鎖させ、崩さず高く積むほど点が伸びます。</p>
+        <p>あなたはバーガー店の店主。お客さんのノルマを満たすバーガーを、その場で組み立てて出します。ただし具材は<strong>物理で落ちる</strong>。狙って落とし、崩さず積み上げるのはあなたの腕次第。となり合った具材が次々と効果を連鎖させ、崩さず高く積むほど点が伸びます。</p>
       </div>
-      <!-- 予告編を YouTube に上げたら、ここに埋め込む:
-      <div class="trailer"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="いただきバーガー 公式トレーラー" allowfullscreen></iframe></div>
+      <!-- trailer: embed the YouTube video here once it is uploaded
+      <div class="trailer"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="いただきバーガー" allowfullscreen></iframe></div>
       -->
       <div class="steam-widget">
         <iframe src="https://store.steampowered.com/widget/5161560/?l=japanese" title="いただきバーガー (Steam)" loading="lazy"></iframe>
@@ -96,8 +159,7 @@
           <div>
             <span class="num">STEP 1</span>
             <h3>狙って落とす</h3>
-            <p>手札の具材を皿の上に狙って落とす。具材は転がり、傾き、崩れる。
-            どこに何を置くかで、次に乗せられるものが変わります。</p>
+            <p>手札の具材を皿の上に狙って落とす。具材は転がり、傾き、崩れる。どこに何を置くかで、次に乗せられるものが変わります。</p>
           </div>
         </div>
         <div class="step">
@@ -105,8 +167,7 @@
           <div>
             <span class="num">STEP 2</span>
             <h3>挟んでシナジー</h3>
-            <p>上バンズを乗せて提供すると採点。となり合う具材の効果が連鎖して点が跳ね上がります。
-            ノルマに届かなければ、その場でゲームオーバー。</p>
+            <p>上バンズを乗せて提供すると採点。となり合う具材の効果が連鎖して点が跳ね上がります。ノルマに届かなければ、その場でゲームオーバー。</p>
           </div>
         </div>
         <div class="step">
@@ -114,8 +175,7 @@
           <div>
             <span class="num">STEP 3</span>
             <h3>夜のフードトラック</h3>
-            <p>お客さんを満足させるたびにフードトラックが開店。食材箱とレリックを買い、
-            いらない食材を処分してデッキを育て、最後のボスに挑みます。</p>
+            <p>お客さんを満足させるたびにフードトラックが開店。食材箱とレリックを買い、いらない食材を処分してデッキを育て、最後のボスに挑みます。</p>
           </div>
         </div>
       </div>
@@ -135,8 +195,7 @@
       </ul>
       <div class="challenge">
         <h3>腕試し</h3>
-        <p>店の格付け★0〜5 と「熟練シェフ」(投下位置が自動で往復する) で難度を上げられます。
-        日替わりチャレンジと延長営業のスコアは Steam ランキングで競えます。</p>
+        <p>店の格付け★0〜5 と「熟練シェフ」(投下位置が自動で往復する) で難度を上げられます。日替わりチャレンジと延長営業のスコアは Steam ランキングで競えます。</p>
       </div>
     </div>
   </section>
@@ -159,7 +218,7 @@
       <h2>ゲーム情報</h2>
       <dl class="facts">
         <dt>タイトル</dt><dd>いただきバーガー</dd>
-        <dt>英語タイトル</dt><dd lang="en">A Bun Above</dd>
+        <dt>英語タイトル</dt><dd><span lang="en">A Bun Above</span></dd>
         <dt>ジャンル</dt><dd>物理積み上げ × デッキ構築ローグライク</dd>
         <dt>開発・販売</dt><dd>NoZworks</dd>
         <dt>対応機種</dt><dd>PC (Steam) ／ Windows 10・11 (64bit)</dd>
@@ -169,9 +228,7 @@
     </div>
   </section>
 
-  <!-- Next フェス (2026年10月) の体験版が公開されたら告知する:
-  <section id="demo" class="alt"><div class="wrap"><h2>体験版を配信中</h2>…</div></section>
-  -->
+  <!-- demo: announce the Next Fest (October 2026) demo here once it is live -->
 
   <div class="cta-bottom">
     <p>ウィッシュリストに入れて、発売を待とう</p>
@@ -188,7 +245,7 @@
     <div>
       <p>&copy; 2026 NoZworks</p>
       <p>Steam は Valve Corporation の商標または登録商標です。</p>
-      <p>見出しフォント: PixelMplus (M+ FONT LICENSE)</p>
+      <p>フォント: PixelMplus (M+ FONT LICENSE) / Fusion Pixel Font (SIL OFL 1.1)</p>
     </div>
   </div>
 </footer>
