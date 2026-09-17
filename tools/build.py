@@ -51,7 +51,9 @@ def languages_row(L):
 def render(L):
     r = "../" if L["dir"] else ""
     url = BASE + L["dir"]
-    store = "https://store.steampowered.com/app/%s/?l=%s" % (APP, L["steam"])
+    # utm_* は Steamworks の UTM アナリティクスで「公式サイト経由の訪問とウィッシュリスト」を数えるため (2026-09-18)。
+    # 構造化データの sameAs は正規の URL のまま残す
+    store = "https://store.steampowered.com/app/%s/?l=%s&utm_source=official_site&utm_medium=web&utm_campaign=site&utm_content=%s" % (APP, L["steam"], L["hreflang"])
     og_image = BASE + "assets/og-%s.png" % L["ss"]
     en = next(x for x in LANGS if x["hreflang"] == "en")
 
