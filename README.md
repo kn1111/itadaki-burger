@@ -36,7 +36,7 @@ Steam ストアの対応言語に合わせた 10 言語。
 画像を差し替えるときは、該当ファイルを消してから `python tools/import_assets.py` (全部作り直すなら `--force`)。
 取り込み元:
 
-- スクリーンショット: ja/en は `burger/docs/store/screenshots/current/` (2560px を最近傍で 1/2)、他は `burger/docs/store/screenshots/<prefix>_*.png` (1920px のまま)
+- スクリーンショット: 全言語 `burger/build/store/<prefix>_*.png` (1920px のまま。`tools/store_shots.ps1` の出力で、Steam のストアと同じ画像)
 - ロゴ: `burger/build/capsules/library_logo_1280x720_<steam言語>.png` の透過部分を切り詰め
 - OGP: `burger/build/capsules/header_920x430_<steam言語>.png`
 - 歯車: `nozworks-brand/png/nozworks_gear_128.png`

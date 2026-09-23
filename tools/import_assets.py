@@ -2,8 +2,7 @@
 
   python tools/import_assets.py [--force]
 
-- ja / en のスクリーンショット: docs/store/screenshots/current/{ja,en}_*.png (2560x1440) を最近傍で 1/2
-- 他の言語: docs/store/screenshots/<prefix>_*.png (1920x1080) をそのまま
+- スクリーンショット: build/store/<prefix>_*.png (1920x1080、Steam のストアと同じもの) をそのまま
 - ロゴ: build/capsules/library_logo_1280x720_<steam>.png の透過部分を切り詰め
 - OGP: build/capsules/header_920x430_<steam>.png
 """
@@ -17,20 +16,22 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BURGER = os.environ.get("BURGER", "C:/Users/knoza/burger")
 FORCE = "--force" in sys.argv
 
-# サイトの接頭辞 → (Steam の言語名, スクショの接頭辞, スクショの並び)
-CURRENT = ["1_title", "2_run", "3_score", "4_result", "5_shop"]
-LOCAL = ["1_title", "3_run", "4_result", "5_shop", "6_codex"]
+# サイトの接頭辞 → (Steam の言語名, スクショの接頭辞)
+# 2026-09-23: スクショはゲーム側の build/store (tools/store_shots.ps1 の出力 = Steam のストアに上げているのと
+# 同じ 1920x1080) から取る。以前は docs/store/screenshots/ の古い置き場から、日英だけ別選定の 5 枚
+# (2560px の 1/2) を取っていて、ストアを撮り直しても古い客・古い店主のままだった。並びも全言語で揃える
+SHOTS = ["1_title", "3_run", "4_result", "5_shop", "6_codex"]
 SPEC = {
-    "ja": ("japanese", "current/ja", CURRENT),
-    "en": ("english", "current/en", CURRENT),
-    "zh-hans": ("schinese", "zh", LOCAL),
-    "zh-hant": ("tchinese", "zht", LOCAL),
-    "ko": ("koreana", "ko", LOCAL),
-    "de": ("german", "de", LOCAL),
-    "fr": ("french", "fr", LOCAL),
-    "es": ("latam", "es", LOCAL),
-    "pt-br": ("brazilian", "pt", LOCAL),
-    "ru": ("russian", "ru", LOCAL),
+    "ja": ("japanese", "ja"),
+    "en": ("english", "en"),
+    "zh-hans": ("schinese", "zh"),
+    "zh-hant": ("tchinese", "zht"),
+    "ko": ("koreana", "ko"),
+    "de": ("german", "de"),
+    "fr": ("french", "fr"),
+    "es": ("latam", "es"),
+    "pt-br": ("brazilian", "pt"),
+    "ru": ("russian", "ru"),
 }
 
 
@@ -42,9 +43,9 @@ def want(dst):
 
 
 def main():
-    for code, (steam, prefix, shots) in SPEC.items():
-        for i, name in enumerate(shots, 1):
-            src = "%s/docs/store/screenshots/%s_%s.png" % (BURGER, prefix, name)
+    for code, (steam, prefix) in SPEC.items():
+        for i, name in enumerate(SHOTS, 1):
+            src = "%s/build/store/%s_%s.png" % (BURGER, prefix, name)
             dst = "%s/assets/ss/%s-%d.png" % (ROOT, code, i)
             if not want(dst):
                 continue

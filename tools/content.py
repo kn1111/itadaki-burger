@@ -22,7 +22,7 @@ LANGS = [
     # ------------------------------------------------------------------ 日本語
     dict(
         dir="", hreflang="ja", og_locale="ja_JP", steam="japanese", font="mplus",
-        ss="ja", ss_size=(1280, 720), menu="日本語",
+        ss="ja", ss_size=(1920, 1080), menu="日本語",
         name="いただきバーガー",
         title="いただきバーガー｜物理で積むハンバーガー・ローグライク【Steam】",
         description="「いただきバーガー」は、具材を物理で落として積み上げるハンバーガー・ローグライク。となり合う具材のシナジーで稼ぎ、崩さず高く積んでお客さんのノルマに挑む。NoZworks 開発、Steam で 2026 年発売予定。",
@@ -48,7 +48,7 @@ LANGS = [
              "皿の上に具材を落として積み上げているゲーム画面"),
             (3, "挟んでシナジー", "上バンズを乗せて提供すると採点。となり合う具材の効果が連鎖して点が跳ね上がります。ノルマに届かなければ、その場でゲームオーバー。",
              "となり合う具材のシナジーで点が伸びる採点画面"),
-            (5, "夜のフードトラック", "お客さんを満足させるたびにフードトラックが開店。食材箱とレリックを買い、いらない食材を処分してデッキを育て、最後のボスに挑みます。",
+            (4, "夜のフードトラック", "お客さんを満足させるたびにフードトラックが開店。食材箱とレリックを買い、いらない食材を処分してデッキを育て、最後のボスに挑みます。",
              "夜のフードトラックで食材箱とレリックを買うショップ画面"),
         ],
         feat_h="積み上げるもの",
@@ -67,8 +67,8 @@ LANGS = [
             (1, "タイトル", "いただきバーガーのタイトル画面"),
             (2, "具材を落として積む", "具材を積み上げるゲーム画面"),
             (3, "シナジーで採点", "シナジーが連鎖する採点画面"),
-            (4, "結果", "お客さんの結果画面"),
-            (5, "夜のフードトラック", "夜のフードトラックのショップ画面"),
+            (4, "夜のフードトラック", "夜のフードトラックのショップ画面"),
+            (5, "図鑑", "集めた具材やレシピを見返せる図鑑の画面"),
         ],
         info_h="ゲーム情報",
         facts=[
@@ -90,7 +90,7 @@ LANGS = [
     # ------------------------------------------------------------------ English
     dict(
         dir="en/", hreflang="en", og_locale="en_US", steam="english", font="mplus",
-        ss="en", ss_size=(1280, 720), menu="English",
+        ss="en", ss_size=(1920, 1080), menu="English",
         name="A Bun Above",
         title="A Bun Above — Burger Stacking Roguelike | Steam",
         description="A Bun Above (いただきバーガー) is a physics-stacking burger roguelike. Drop ingredients onto the plate, chain synergies between neighbours and keep the tower upright to hit every customer's quota. By NoZworks, coming to Steam in 2026.",
@@ -116,7 +116,7 @@ LANGS = [
              "Gameplay: dropping ingredients onto the plate to build a burger"),
             (3, "Sandwich for synergy", "Cap it with the top bun to serve and get scored. Effects chain between neighbours and the score climbs. Miss the quota and it's game over on the spot.",
              "Scoring: synergies between neighbouring ingredients stack up points"),
-            (5, "The night food truck", "Clear a customer and the food truck opens: buy crates and relics, toss the stock you don't need, and grow your deck for the final boss.",
+            (4, "The night food truck", "Clear a customer and the food truck opens: buy crates and relics, toss the stock you don't need, and grow your deck for the final boss.",
              "The night food truck shop selling crates and relics"),
         ],
         feat_h="What you stack",
@@ -135,8 +135,8 @@ LANGS = [
             (1, "Title", "A Bun Above title screen"),
             (2, "Drop and stack", "Stacking ingredients on the plate"),
             (3, "Score the synergies", "Synergy scoring"),
-            (4, "Result", "Customer result screen"),
-            (5, "The night food truck", "The night food truck shop"),
+            (4, "The night food truck", "The night food truck shop"),
+            (5, "Compendium", "The compendium of the ingredients and recipes you have found"),
         ],
         info_h="Game info",
         facts=[
