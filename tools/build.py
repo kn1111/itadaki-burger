@@ -234,6 +234,7 @@ def render(L):
     <div>
       <p class="maker"><img class="px" src="{r}assets/nozworks-gear.png" alt="" width="24" height="24">NoZworks</p>
       <p>{L['contact']}: <a href="mailto:{MAIL}">{MAIL}</a></p>
+      <p><a href="{r}privacy/">プライバシーポリシー / Privacy Policy</a></p>
     </div>
     <div>
       <p>&copy; 2026 NoZworks</p>
