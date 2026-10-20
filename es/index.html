@@ -130,7 +130,13 @@
       <p class="tagline">¡Suéltalo! ¡Apílalo! ¡Emparéjalo y que rinda!</p>
       <p class="alt-name">Roguelike de hamburguesas con física real</p>
       <a class="btn" href="https://store.steampowered.com/app/5161560/?l=latam&utm_source=official_site&utm_medium=web&utm_campaign=site&utm_content=es">Agregar a la lista de deseados en Steam</a>
-      <p class="release">Lanzamiento previsto: 4.º trimestre de 2026 / Windows (Steam)</p>
+      <p class="release">Lanzamiento previsto: 18 de noviembre de 2026 / Windows (Steam)</p>
+      <div class="demo">
+        <p class="fest" data-until="2026-10-26T17:00:00Z">Steam Next Fest</p>
+        <p class="demo-h">Qué incluye esta demo</p>
+        <p class="demo-scope">La demo incluye tres cocineros y un turno de cuatro clientes.</p>
+        <a class="btn small" href="https://store.steampowered.com/app/5194060/?l=latam&utm_source=official_site&utm_medium=web&utm_campaign=demo&utm_content=es">Burger a Tope Demo</a>
+      </div>
     </div>
   </div>
 
@@ -222,13 +228,11 @@
         <dt>Género</dt><dd>Apilado con física × roguelike de construcción de mazos</dd>
         <dt>Desarrollador / editor</dt><dd>NoZworks</dd>
         <dt>Plataforma</dt><dd>PC (Steam) / Windows 10 y 11 (64 bits)</dd>
-        <dt>Lanzamiento</dt><dd>4.º trimestre de 2026 (previsto)</dd>
+        <dt>Lanzamiento</dt><dd>18 de noviembre de 2026 (previsto)</dd>
         <dt>Idiomas</dt><dd>Español / 日本語 / English / 简体中文 / 繁體中文 / 한국어 / Deutsch / Français / Português (Brasil) / Русский</dd>
       </dl>
     </div>
   </section>
-
-  <!-- demo: announce the Next Fest (October 2026) demo here once it is live -->
 
   <div class="cta-bottom">
     <p>Agrégalo a tu lista de deseados y no te pierdas el lanzamiento</p>
@@ -251,5 +255,6 @@
   </div>
 </footer>
 
+<script>document.querySelectorAll("[data-until]").forEach(function (e) { if (Date.now() > Date.parse(e.dataset.until)) e.remove(); });</script>
 </body>
 </html>

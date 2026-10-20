@@ -130,7 +130,13 @@
       <p class="tagline">丟下！疊高！夾出連動！</p>
       <p class="alt-name">以物理堆疊為核心的漢堡 Roguelike</p>
       <a class="btn" href="https://store.steampowered.com/app/5161560/?l=tchinese&utm_source=official_site&utm_medium=web&utm_campaign=site&utm_content=zh-Hant">在 Steam 加入願望清單</a>
-      <p class="release">預計 2026 年第四季推出 ／ Windows (Steam)</p>
+      <p class="release">預計 2026 年 11 月 18 日推出 ／ Windows (Steam)</p>
+      <div class="demo">
+        <p class="fest" data-until="2026-10-26T17:00:00Z">Steam Next Fest</p>
+        <p class="demo-h">試玩版包含的內容</p>
+        <p class="demo-scope">試玩版可以使用3位廚師，挑戰4位顧客的目標分數。</p>
+        <a class="btn small" href="https://store.steampowered.com/app/5194060/?l=tchinese&utm_source=official_site&utm_medium=web&utm_campaign=demo&utm_content=zh-Hant">頂飽漢堡 Demo</a>
+      </div>
     </div>
   </div>
 
@@ -222,13 +228,11 @@
         <dt>類型</dt><dd>物理堆疊 × 套牌構築 Roguelike</dd>
         <dt>開發・發行</dt><dd>NoZworks</dd>
         <dt>平台</dt><dd>PC (Steam) ／ Windows 10・11 (64位元)</dd>
-        <dt>上市日期</dt><dd>2026年第四季（預定）</dd>
+        <dt>上市日期</dt><dd>2026年11月18日（預定）</dd>
         <dt>支援語言</dt><dd>繁體中文 / 日本語 / English / 简体中文 / 한국어 / Deutsch / Français / Español / Português (Brasil) / Русский</dd>
       </dl>
     </div>
   </section>
-
-  <!-- demo: announce the Next Fest (October 2026) demo here once it is live -->
 
   <div class="cta-bottom">
     <p>加入願望清單，等待上市</p>
@@ -251,5 +255,6 @@
   </div>
 </footer>
 
+<script>document.querySelectorAll("[data-until]").forEach(function (e) { if (Date.now() > Date.parse(e.dataset.until)) e.remove(); });</script>
 </body>
 </html>

@@ -18,6 +18,9 @@ from content import ALL_NAMES, LANG_NAMES, LANGS  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://kn1111.github.io/itadaki-burger/"
 APP = "5161560"
+DEMO_APP = "5194060"
+# Next Fest 2026 年 10 月版の終了 (10/26 10:00 PT)。この時刻を過ぎたらページ内の小さなスクリプトが「Steam Next Fest」の札を消す
+FEST_UNTIL = "2026-10-26T17:00:00Z"
 BURGER = os.environ.get("BURGER", "C:/Users/knoza/burger")
 MAIL = "nozworks2027@gmail.com"
 LASTMOD = "2026-09-14"
@@ -54,6 +57,8 @@ def render(L):
     # utm_* は Steamworks の UTM アナリティクスで「公式サイト経由の訪問とウィッシュリスト」を数えるため (2026-09-18)。
     # 構造化データの sameAs は正規の URL のまま残す
     store = "https://store.steampowered.com/app/%s/?l=%s&utm_source=official_site&utm_medium=web&utm_campaign=site&utm_content=%s" % (APP, L["steam"], L["hreflang"])
+    # 体験版 (5194060) も同じ UTM で数える。utm_campaign=demo で本編へのリンクと分ける (2026-10-20)
+    demo = "https://store.steampowered.com/app/%s/?l=%s&utm_source=official_site&utm_medium=web&utm_campaign=demo&utm_content=%s" % (DEMO_APP, L["steam"], L["hreflang"])
     og_image = BASE + "assets/og-%s.png" % L["ss"]
     en = next(x for x in LANGS if x["hreflang"] == "en")
 
@@ -163,6 +168,12 @@ def render(L):
       <p class="alt-name">{L['subtitle']}</p>
       <a class="btn" href="{store}">{L['cta']}</a>
       <p class="release">{L['release']}</p>
+      <div class="demo">
+        <p class="fest" data-until="{FEST_UNTIL}">Steam Next Fest</p>
+        <p class="demo-h">{L['demo_h']}</p>
+        <p class="demo-scope">{L['demo_scope']}</p>
+        <a class="btn small" href="{demo}">{L['name']} Demo</a>
+      </div>
     </div>
   </div>
 
@@ -221,8 +232,6 @@ def render(L):
     </div>
   </section>
 
-  <!-- demo: announce the Next Fest (October 2026) demo here once it is live -->
-
   <div class="cta-bottom">
     <p>{L['cta_text']}</p>
     <a class="btn" href="{store}">{L['cta_btn']}</a>
@@ -244,6 +253,7 @@ def render(L):
   </div>
 </footer>
 
+<script>document.querySelectorAll("[data-until]").forEach(function (e) {{ if (Date.now() > Date.parse(e.dataset.until)) e.remove(); }});</script>
 </body>
 </html>
 """

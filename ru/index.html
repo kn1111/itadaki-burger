@@ -130,7 +130,13 @@
       <p class="tagline">Бросай! Складывай! Зажми ради синергии!</p>
       <p class="alt-name">Физический рогалик про строительство бургеров</p>
       <a class="btn" href="https://store.steampowered.com/app/5161560/?l=russian&utm_source=official_site&utm_medium=web&utm_campaign=site&utm_content=ru">Добавить в желаемое в Steam</a>
-      <p class="release">Выход — IV квартал 2026 г. / Windows (Steam)</p>
+      <p class="release">Выход — 18 ноября 2026 г. / Windows (Steam)</p>
+      <div class="demo">
+        <p class="fest" data-until="2026-10-26T17:00:00Z">Steam Next Fest</p>
+        <p class="demo-h">Что есть в демоверсии</p>
+        <p class="demo-scope">В демоверсии доступны три повара и смена из четырёх клиентов.</p>
+        <a class="btn small" href="https://store.steampowered.com/app/5194060/?l=russian&utm_source=official_site&utm_medium=web&utm_campaign=demo&utm_content=ru">Булка Что Надо Demo</a>
+      </div>
     </div>
   </div>
 
@@ -222,13 +228,11 @@
         <dt>Жанр</dt><dd>Физическое строительство × рогалик с построением колоды</dd>
         <dt>Разработчик / издатель</dt><dd>NoZworks</dd>
         <dt>Платформа</dt><dd>PC (Steam) / Windows 10 и 11 (64 бита)</dd>
-        <dt>Дата выхода</dt><dd>IV квартал 2026 г. (планируется)</dd>
+        <dt>Дата выхода</dt><dd>18 ноября 2026 г. (планируется)</dd>
         <dt>Языки</dt><dd>Русский / 日本語 / English / 简体中文 / 繁體中文 / 한국어 / Deutsch / Français / Español / Português (Brasil)</dd>
       </dl>
     </div>
   </section>
-
-  <!-- demo: announce the Next Fest (October 2026) demo here once it is live -->
 
   <div class="cta-bottom">
     <p>Добавьте в желаемое, чтобы не пропустить выход</p>
@@ -251,5 +255,6 @@
   </div>
 </footer>
 
+<script>document.querySelectorAll("[data-until]").forEach(function (e) { if (Date.now() > Date.parse(e.dataset.until)) e.remove(); });</script>
 </body>
 </html>

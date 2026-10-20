@@ -130,7 +130,13 @@
       <p class="tagline">投放！堆叠！夹出增益！</p>
       <p class="alt-name">物理堆叠的汉堡 Roguelike</p>
       <a class="btn" href="https://store.steampowered.com/app/5161560/?l=schinese&utm_source=official_site&utm_medium=web&utm_campaign=site&utm_content=zh-Hans">在 Steam 加入愿望单</a>
-      <p class="release">预计 2026 年第四季度发售 ／ Windows (Steam)</p>
+      <p class="release">预计 2026 年 11 月 18 日发售 ／ Windows (Steam)</p>
+      <div class="demo">
+        <p class="fest" data-until="2026-10-26T17:00:00Z">Steam Next Fest</p>
+        <p class="demo-h">试玩版现已上线</p>
+        <p class="demo-scope">试玩版可以使用3位厨师，挑战4位顾客的目标分数。</p>
+        <a class="btn small" href="https://store.steampowered.com/app/5194060/?l=schinese&utm_source=official_site&utm_medium=web&utm_campaign=demo&utm_content=zh-Hans">顶饱汉堡 Demo</a>
+      </div>
     </div>
   </div>
 
@@ -222,13 +228,11 @@
         <dt>类型</dt><dd>物理堆叠 × 构筑 Roguelike</dd>
         <dt>开发・发行</dt><dd>NoZworks</dd>
         <dt>平台</dt><dd>PC (Steam) ／ Windows 10・11 (64位)</dd>
-        <dt>发售日</dt><dd>2026年第四季度（计划）</dd>
+        <dt>发售日</dt><dd>2026年11月18日（计划）</dd>
         <dt>支持语言</dt><dd>简体中文 / 日本語 / English / 繁體中文 / 한국어 / Deutsch / Français / Español / Português (Brasil) / Русский</dd>
       </dl>
     </div>
   </section>
-
-  <!-- demo: announce the Next Fest (October 2026) demo here once it is live -->
 
   <div class="cta-bottom">
     <p>加入愿望单，等待发售</p>
@@ -251,5 +255,6 @@
   </div>
 </footer>
 
+<script>document.querySelectorAll("[data-until]").forEach(function (e) { if (Date.now() > Date.parse(e.dataset.until)) e.remove(); });</script>
 </body>
 </html>
