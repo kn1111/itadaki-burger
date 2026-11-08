@@ -20,7 +20,7 @@ FORCE = "--force" in sys.argv
 # 2026-09-23: スクショはゲーム側の build/store (tools/store_shots.ps1 の出力 = Steam のストアに上げているのと
 # 同じ 1920x1080) から取る。以前は docs/store/screenshots/ の古い置き場から、日英だけ別選定の 5 枚
 # (2560px の 1/2) を取っていて、ストアを撮り直しても古い客・古い店主のままだった。並びも全言語で揃える
-SHOTS = ["1_title", "3_run", "4_result", "5_shop", "6_codex"]
+SHOTS = ["1_title", "9_combo", "4_result", "5_shop", "6_codex"]  # 2 枚目は 2026-11-08 にストアと同じコンボの絵へ
 SPEC = {
     "ja": ("japanese", "ja"),
     "en": ("english", "en"),
